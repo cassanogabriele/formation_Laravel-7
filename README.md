@@ -1,7 +1,18 @@
+## MVC 
+
+## Les modèles
+Données de l’application et permettent l’interaction avec la base de données. Le modèle va gérer la base de données.
+
+## Les vues
+Tout ce qui est représentation visuelle : templates, des résultats de la requête que l’utilisateur à effectué. La vue produit les pages HTML.
+
+## Les contrôleurs
+Ils vont intercepter les requêtes et c’est ici que se passera tout le traitement des données. Tout le reste se fait dans le contrôleur. Notion essentielle qu’on utilise tout au long d’une application Laravel, il va s’occuper de rendre la vue. Le user sur le navigateur va vouloir accéder à une page, c’est là qu’intervient le routing qui va faire correspondre cette url au bon contrôleur et à la bonne fonction qui va gérer ce rendu. On passe dans le contrôleur, si il y interaction avec la base de données, on va gérer ça avec le modèle, qui va faire l’intermédiaire entre le contrôleur et la base de données, le contrôleur fait le traitement ensuite de tout ce qu’il a récupéré. On va rendre une nouvelle vue, ce que le user va voir au niveau du navigateur : du HTML + un peu de traitement. Laravel intègre un système de routage qui va permettre de créer des urls très simples et naturelles, l’ORM Eloquent qui va permettre de simplifier l’accès à la base de données en travaillant avec des objets plutôt que d’accéder directement à des données relationnelles. Le QueryBuilder permet de construire sa propre requête SQL avec une syntaxe simplifiée tout en manipulant des objets. Blade est le template qui permet de favoriser la lisibilité et la logique du code, il permettra de construire les rendus visuels, principalement du code HTML mais aussi un système d’inclusion de fichiers, d’héritages, de boucles, de conditions, on peut même directement écrire du code PHP. Laravel prend en charge la gestion des cookies et de la session qui sont utilisées pour stocker des informations sur l’utilisateur au fur et à mesure de sa navigation sur le site. Système de validation très performant et très simplement, pour avoir un contrôle total entre les différentes pages et le contrôleur. La validation frontend est tout le JavaScript, côté client (un champ obligatoire dans un formulaire). Laravel propose de la validation backend pour récupérer les données, les traiter, vérifier ce qu’on nous envoie et valider ou non ces données, c’est très performant. Le système de migration pour les bases de données permet de créer et de mettre à jour un schéma de base de données, le but est de centraliser toute la gestion de la base de données au sein de l’application. Le contrôleur permet d’utiliser des fonctions.
+
 ## Créer un projet Laravel 
 composer create-project --prefer-dist laravel/laravel udemytraining
 
-## Accéder directement au dossier de l'application créée 
+## Accéder directement au dossier de l'application créée  (dans Visual Studio Code)
 code .
 
 ## Lancer le serveur avec l'application 
@@ -40,8 +51,6 @@ php artisan make:seed ArticleSeeder
 ## Appeler le database seeder
 php artisan db:seed
 
-#####################################################################
-
 ## Exécuter directement du code PHP (shell -> exit pour quitter)
 php artisan tinker
 
@@ -51,7 +60,8 @@ App\Category::all();
 ## Récupérer une catégorie aléatoire
 App\Category::all()->random(1)->first->id;
 
-#####################################################################
+## Raccourcis
+CTRL + ALT + I : pour cliquer sur une classe et chercher dans l’architecture pour trouver la classe et l’inclure.
 
 ## Middleware 
 Un Middleware va fournir un mécanisme pratique pour filtrer les requêtes HTTP qui vont entrer dans l'application.

@@ -1,4 +1,3 @@
-
 ## Apprentissage 
 
 ## Créer un projet Laravel 
@@ -87,4 +86,24 @@ https://github.com/darryldecode/laravelshoppingcart/blob/master/src/Darryldecode
 
 ## Installation et configuration 
 https://packagist.org/packages/darryldecode/cart
+
+## Stripe 
+https://dashboard.stripe.com/login
+
+cassanogabriele78@gmail.com
+Intheclawsofawitch1978
+
+composer require stripe/stripe-php
+
+Documentation : https://stripe.com/docs/stripe-js
+Utilisation : https://github.com/stripe/stripe-php
+
+## Pour la similation de paiement 
+Créer un Customers : https://dashboard.stripe.com/test/customers et mettre comme informations : 
+
+compte Visa : 4242 4242 4242 4242 
+date : 04/24
+numéro : 242
+code postal : 42424
+
 

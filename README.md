@@ -113,6 +113,7 @@ STRIPE_PRIVATE_KEY = clé venant du compte sur le site
 
 +  ne pas mettre la ligne commentée sinon erreur : 
 
+```
 public function charge(Request $request){       
   \Stripe\Stripe::setApiKey(env('STRIPE_PRIVATE_KEY'));
   $cart = \Cart::session(Auth::user()->id);
@@ -135,5 +136,5 @@ public function charge(Request $request){
     throw $error;
  }
 }
-
+```
 

@@ -98,43 +98,12 @@ composer require stripe/stripe-php
 Documentation : https://stripe.com/docs/stripe-js
 Utilisation : https://github.com/stripe/stripe-php
 
-## Pour la similation de paiement 
-Créer un Customers : https://dashboard.stripe.com/test/customers et mettre comme informations : 
+## API (Application Programming Interface)
+Elle va permettre à deux applications de communiquer entre elles : on communiquera depuis l'application Laravel avec Udemy pour récupérer des informations. Une API, expose, rend disponible des fonctionnalités ou des données. Pour pouvoir les utiliser, la plupart des API requièrent une clé (API Key), voir parfois deux. Cette clé va permettre à l'API d'identifier comme étant utilisateur et avoir les droits pour se servir de cet API.
 
-compte Visa : 4242 4242 4242 4242 
-date : 04/24
-numéro : 242
-code postal : 42424
+https://www.udemy.com/instructor/account/api/
 
-+ mettre dans le fichier ".env" : 
+Aller à "Clients API" et il faut faire une demande de clé en cliquant sur le bouton "Demander un client API affilié".
 
-STRIPE_API_PUBLIC = clé venant du compte sur le site
-STRIPE_PRIVATE_KEY = clé venant du compte sur le site
-
-+  ne pas mettre la ligne commentée sinon erreur : 
-
-```
-public function charge(Request $request){       
-  \Stripe\Stripe::setApiKey(env('STRIPE_PRIVATE_KEY'));
-  $cart = \Cart::session(Auth::user()->id);
-
-  $tax = $cart->getTotal() / 10;
-  $roundedTax = round($tax,2);
-
-  try{
-     $charge = \Stripe\Charge::create([
-        'amount' => ($cart->getTotal() + $roundedTax) * 100,
-        'currency' => 'EUR',               
-        'description' => 'Paiement via Elearning',
-        'customer' => 'cus_I9yDujkW3AyTzN',           
-        // 'course' => $request->input('stripeToken'),
-        'receipt_email' => 'gabriel_cassano@hotmail.com'
-     ]);
-
-    return redirect()->route('checkout.success')->with('success', 'Paiement accepté');
- } catch(\Stripe\Exception\CardErrorException $error){
-    throw $error;
- }
-}
-```
+Email envoyé car pas moyen de créer la clé API pour continuer la formation, le formulaire bloque au champs nom, j'ai beau essayé avec n'importe quoi, rien à faire.
 

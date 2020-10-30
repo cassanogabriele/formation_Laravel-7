@@ -42,8 +42,6 @@ php artisan make:seed ArticleSeeder
 ## Appeler le database seeder
 php artisan db:seed
 
-#####################################################################
-
 ## Exécuter directement du code PHP (shell -> exit pour quitter)
 php artisan tinker
 
@@ -52,8 +50,6 @@ App\Category::all();
 
 ## Récupérer une catégorie aléatoire
 App\Category::all()->random(1)->first->id;
-
-#####################################################################
 
 ## Middleware 
 Un Middleware va fournir un mécanisme pratique pour filtrer les requêtes HTTP qui vont entrer dans l'application.
@@ -106,4 +102,24 @@ https://www.udemy.com/instructor/account/api/
 Aller à "Clients API" et il faut faire une demande de clé en cliquant sur le bouton "Demander un client API affilié".
 
 Email envoyé car pas moyen de créer la clé API pour continuer la formation, le formulaire bloque au champs nom, j'ai beau essayé avec n'importe quoi, rien à faire.
+
+## Fichier word (résumé)
+
+## MVC 
+
+## Les modèles
+
+Données de l’application et permettent l’interaction avec la base de données. Le modèle va gérer la base de données.
+
+## Les vues
+
+Tout ce qui est représentation visuelle : templates, des résultats de la requête que l’utilisateur à effectué. La vue produit les pages HTML.
+
+## Les contrôleurs
+Ils vont intercepter les requêtes et c’est ici que se passera tout le traitement des données. Tout le reste se fait dans le contrôleur.
+
+
+
+
+
 

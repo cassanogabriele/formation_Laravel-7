@@ -118,6 +118,14 @@ Tout ce qui est représentation visuelle : templates, des résultats de la requ�
 ## Les contrôleurs
 Ils vont intercepter les requêtes et c’est ici que se passera tout le traitement des données. Tout le reste se fait dans le contrôleur.
 
+Le user sur le navigateur va vouloir accéder à une page, c’est là qu’intervient le routing qui va faire correspondre cette url au bon contrôleur et à la bonne fonction qui va gérer ce rendu. On passe dans le contrôleur, si il y interaction avec la base de données, on va gérer ça avec le modèle, qui va faire l’intermédiaire entre le contrôleur et la base de données, le contrôleur fait le traitement ensuite de tout ce qu’il a récupéré. On va rendre une nouvelle vue, ce que le user va voir au niveau du navigateur : du HTML + un peu de traitement. Laravel intègre un système de routage qui va permettre de créer des urls très simples et naturelles, l’ORM Eloquent qui va permettre de simplifier l’accès à la base de données en travaillant avec des objets plutôt que d’accéder directement à des données relationnelles. Le QueryBuilder permet de construire sa propre requête SQL avec une syntaxe simplifiée tout en manipulant des objets. Blade est le template qui permet de favoriser la lisibilité et la logique du code, il permettra de construire les rendus visuels, principalement du code HTML mais aussi un système d’inclusion de fichiers, d’héritages, de boucles, de conditions, on peut même directement écrire du code PHP. Laravel prend en charge la gestion des cookies et de la session qui sont utilisées pour stocker des informations sur l’utilisateur au fur et à mesure de sa navigation sur le site. Système de validation très performant et très simplement, pour avoir un contrôle total entre les différentes pages et le contrôleur. La validation frontend est tout le JavaScript, côté client (un champ obligatoire dans un formulaire). Laravel propose de la validation backend pour récupérer les données, les traiter, vérifier ce qu’on nous envoie et valider ou non ces données, c’est très performant. Le système de migration pour les bases de données permet de créer et de mettre à jour un schéma de base de données, le but est de centraliser toute la gestion de la base de données au sein de l’application.
+
+## Commandes Laravel
+
+## Créer une application 
+
+composer create-project –prefer-dist laravel/laravel training
+
 
 
 

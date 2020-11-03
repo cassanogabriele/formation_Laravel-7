@@ -131,6 +131,16 @@ Aller à "Clients API" et il faut faire une demande de clé en cliquant sur le b
 
 Email envoyé car pas moyen de créer la clé API pour continuer la formation, le formulaire bloque au champs nom, j'ai beau essayé avec n'importe quoi, rien à faire.
 
+## Déployer l'application sur Firebase 
+On va pouvoir déployer l'application sur Firebase, c'est là que CLI va être utile, on va déployer l'application en une seule commande, "firebase deploy". Une fois que la commande a finit d'être exécuté, l'application est en ligne directement, l'adresse par défaut pour accéder au site est "https://nom_projet.firebaseapp.com". On peut même demander à Firebase d'afficher le site à notre place dans une navigateur, avec la commande "firebase open". Descendre et appuyer sur "Hosting: Deployed Site". Fibase ouvre la dernière application qu'on a déployé avec Firebase CLI, l'application est maintenant disponible en ligne à une adresse accesssible par tout le monde. Si on le souhaite, Firebase propose d'associer un autre nom domaine à l'application si celui donné par défaut ne nous convient pas. Si on utilise Chrome et que l'extension "ad block" est activée, il se peut que l'application affiche une simple page blanche, celui est du à l'extension "ad block" de Chrome et la librairie "zone js" requise pour faire fonctionner Angular. Pour remédier à ce problème "ad block" du navigateur, on a pas besoin de cette extension pour le site puisqu'il n'affiche pas de publicité.
+
+## Communiquer avec l'API Udemy 
+
+## Ma clé 
+mLyaqFxQbnRdEFllBcEQxnWR5M2xSWxlwf1bdEJMBSXwyIGzlgwiweoRsrtrHQBsFAxUS4yUS8eJgq6MNaWaM06YUzQjD14JMbddhD69pjdka1cPvsglhhNxiGdZvszs 
+
+Il faut récupérer les informations dont on a besoin dans le fichier ".env" sur notre compte Udemy et il faudra les stocker dans ce fichier car ce sont des données personnelles et c'est un fichier auquel personne n'aura accès, ensuite, on pourrait communiquer avec l'API de Udemy. Comme la plupart des API, Udemy propose une documentation qui explique comment elle fonctionne : les méthodes qu'on peut appeler, les informations qu'on va pouvoir récupérer grâce à l'APi, notamment aussi, les modèles, quelles propriétés on va pouvoir utiliser à partir des éléments qu'on récupère. Ce qui va nous intéresser, c'est "GET courses-list", on va pouvoir récupérer les cours qui sont disponibles sur Udemy et on va pouvoir préciser certains paramètres : si on veut récupérer des cours liés à une catégorie spécifique, si on veut des cours qui soient gratuits, des cours dans un certain langage, même des cours avec une certain durée de vidéo, on va cliquer sur le bouton "Essayez par vous-même !". On aura une réponse "403",ce qui veut dire qu'on a pas accès à la ressource, Udemy retourne un message, c'est parce qu'on est pas authentifier. Il faut donc préciser le client id et le client secret dans le formulaire et recliquer sur le bouton "Essayez par vous-même !" et on obtient alors un code de réponse "200" et on obtient un gros fichier JSON avec beaucoup d'informations, on récupère une liste de cours sur Udemy (le titre, le prix, les détails du prix, la devise, des informations concernant le formateur). Pour intégrer cela à l'application, dans le "HomeController", dans la fonction "home()", on va faire appel à l'API d'Udemy pour récupérer les résultats pour afficher sur la page d'accueil des cours qui proviennent d'Udemy. Pour ne pas encombrer la fonction "home()", on va faire une classe à part, comme pour les "Managers", mais comme c'est un client quand on parle d'API, on va faire un dossier client et dedans, on va créer une classe "UdemyClient.php".
+
 ## Fichier word (résumé)
 
 ## MVC 
@@ -209,7 +219,7 @@ Méthode d'envoie "POST" et nom de la valeur qu'on souhaite récupérer est "pr�
 
 FAUX 
 
-## Solution pour problème d'appel à un serveur distant https avec Laravel 
+## Solution pour problème d'appel à un serveur distant https à partir d'un serveur local avec Laravel (à tester demain pour Payzen car dans la formation ça fonctionne, j'ai réussit à le faire)
 
 <?php
 namespace App\Http\Clients;
@@ -236,6 +246,8 @@ public function getUdemyCourses(){
    }
 }
 ```
+
+
 
 
 

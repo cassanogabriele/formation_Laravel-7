@@ -209,7 +209,33 @@ Méthode d'envoie "POST" et nom de la valeur qu'on souhaite récupérer est "pr�
 
 FAUX 
 
-10. 
+## Solution pour problème d'appel à un serveur distant https avec Laravel 
+
+<?php
+namespace App\Http\Clients;
+use Illuminate\Support\Facades\Http;
+
+class UdemyClient {    
+```
+public function getUdemyCourses(){
+  // On va pouvoir récupérer la logique pour pouvoir récupérer les cours d'Udemy 
+
+  // Vérifier qu'on récupère bien les variables d'environnement 
+
+  // dd(env('UDEMY_CLIENT_ID'), env('UDEMY_CLIENT_SECRET'));
+
+  // S'authentifier auprès d'Udemy
+  $client = 
+        Http::withOptions([ 
+            'verify'     => false, 
+            ])->withBasicAuth(env('UDEMY_CLIENT_ID'), env('UDEMY_CLIENT_SECRET'));
+
+        // Construire et récupérer la réponse 
+        $response = $client->get('https://www.udemy.com/api-2.0/courses/');
+        dd($response);
+   }
+}
+```
 
 
 

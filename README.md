@@ -219,14 +219,14 @@ Méthode d'envoie "POST" et nom de la valeur qu'on souhaite récupérer est "pr�
 
 FAUX 
 
-## Solution pour problème d'appel à un serveur distant https à partir d'un serveur local avec Laravel (à tester demain pour Payzen car dans la formation ça fonctionne, j'ai réussit à le faire)
+## Solution pour problème d'appel à un serveur distant https à partir d'un serveur local avec Laravel (à tester demain pour Payzen car dans la formation ça fonctionne, j'ai réussit à le faire) + voir documentation : https://laravel.com/docs/8.x/http-client
 
-<?php
+```
 namespace App\Http\Clients;
 use Illuminate\Support\Facades\Http;
 
 class UdemyClient {    
-```
+
 public function getUdemyCourses(){
   // On va pouvoir récupérer la logique pour pouvoir récupérer les cours d'Udemy 
 

@@ -1,3 +1,6 @@
+
+(formation terminée 04-11-2020)
+
 ## Apprentissage 
 
 ## Créer un projet Laravel 

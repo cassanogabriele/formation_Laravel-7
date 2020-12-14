@@ -17,7 +17,7 @@ code .
 
 ## Créer un contrôleur (contrôleur vide)
 
-``` php artisan make::controller MyController ```
+``` php artisan make:controller MyController ```
 
 ## Créer un contrôleur avec traitements (GET, POST, PUT/PATCH, DELETE)
 
